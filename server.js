@@ -27,8 +27,8 @@ app.set('port',port);
  */
 usuariosRutas(app);
 
-server.listen(3000,'192.168.56.1' || 'localhost',function(){
-    console.log('aplicacion de node ' +  process.pid + ' en el puerto ' + port +  ' iniciando...');
+server.listen(3000,'192.168.1.85' || 'localhost',function(){
+    console.log('aplicacion de node ' +  process.pid + ' en el puerto ' + port + ' iniciando...');
 })
 // rutas
 app.get('/',(req,res)=>{
