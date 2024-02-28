@@ -3,6 +3,7 @@ const app = express();
 const http = require('http');
 const logger = require('morgan');
 const cors = require('cors');
+const passport = require('passport') // jwt
 
 /**
  * Importamos las rutas
@@ -19,6 +20,12 @@ app.use(express.urlencoded({
     extended:true,
 }));
 app.use(cors());
+//jwt
+app.use(passport.initialize());
+app.use(passport.session());
+require('./config/passport')(passport);
+
+// termina jwt
 app.disable('x-powered-by');
 app.set('port',port);
 
